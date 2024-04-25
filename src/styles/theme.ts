@@ -1,0 +1,187 @@
+import { extendTheme } from "@chakra-ui/react";
+
+import MainWrap from "./components/App";
+import Header from "./components/Header";
+import Accordion from "./components/Accordion";
+import Language from "./components/Language";
+import "@fontsource/madimi-one";
+
+const baseColors = {
+  black: "#0a1018",
+  gray: {
+    "50": "#f9fafa",
+    "100": "#f0f2f4",
+    "200": "#e5e8eb",
+    "300": "#cfd4db",
+    "400": "#a3aebb",
+    "500": "#708095",
+    "600": "#405671",
+    "700": "#223853",
+    "800": "#142131",
+    "900": "#101a27",
+  },
+  green: {
+    "50": "#ecfce7",
+    "100": "#b0f199",
+    "200": "#56e123",
+    "300": "#3dbe0f",
+    "400": "#37aa0d",
+    "500": "#2e900b",
+    "600": "#277909",
+    "700": "#1f6107",
+    "800": "#1b5206",
+    "900": "#133c05",
+  },
+  teal: {
+    "50": "#effcfd",
+    "100": "#b8f3f6",
+    "200": "#72e6ec",
+    "300": "#11d2dc",
+    "400": "#0eb2bb",
+    "500": "#0c989f",
+    "600": "#0a7b81",
+    "700": "#086064",
+    "800": "#065054",
+    "900": "#054245",
+  },
+  cyan: {
+    "50": "#f3fbfd",
+    "100": "#cdeff8",
+    "200": "#b6e7f5",
+    "300": "#9bdff2",
+    "400": "#45c3e6",
+    "500": "#16b4e0",
+    "600": "#0fa2cb",
+    "700": "#0d86a8",
+    "800": "#0b6e8a",
+    "900": "#08556b",
+  },
+  blue: {
+    "50": "#f1f6fd",
+    "100": "#cce0f8",
+    "200": "#a6c9f3",
+    "300": "#7cafed",
+    "400": "#5296e8",
+    "500": "#2c7ee3",
+    "600": "#1067d1",
+    "700": "#0c4fa0",
+    "800": "#0a4183",
+    "900": "#08356b",
+  },
+  purple: {
+    "50": "#f9f6fe",
+    "100": "#e6d9fa",
+    "200": "#d3bef6",
+    "300": "#b894f1",
+    "400": "#a477ed",
+    "500": "#894fe7",
+    "600": "#742fe3",
+    "700": "#5c10d6",
+    "800": "#4c0db1",
+    "900": "#390a85",
+  },
+  pink: {
+    "50": "#fef5f9",
+    "100": "#fad8e7",
+    "200": "#f5b8d4",
+    "300": "#ef8ab8",
+    "400": "#eb67a2",
+    "500": "#e32c7e",
+    "600": "#cb1064",
+    "700": "#a70d52",
+    "800": "#830a41",
+    "900": "#620730",
+  },
+  red: {
+    "50": "#fef5f5",
+    "100": "#fad9d7",
+    "200": "#f5b6b3",
+    "300": "#ef8a84",
+    "400": "#eb6e67",
+    "500": "#e44037",
+    "600": "#d01910",
+    "700": "#a9140d",
+    "800": "#90110b",
+    "900": "#6a0d08",
+  },
+  orange: {
+    "50": "#fefaf5",
+    "100": "#faebd9",
+    "200": "#f4d3ac",
+    "300": "#ebb16a",
+    "400": "#e28f2a",
+    "500": "#cc7710",
+    "600": "#ac640d",
+    "700": "#89500a",
+    "800": "#6c3f08",
+    "900": "#593407",
+  },
+  yellow: {
+    "50": "#fefefb",
+    "100": "#fcf9e7",
+    "200": "#f6eeb9",
+    "300": "#eee180",
+    "400": "#e2cd2b",
+    "500": "#bda80e",
+    "600": "#97870c",
+    "700": "#766909",
+    "800": "#584f07",
+    "900": "#494106",
+  },
+  primary: {
+    "50": "#ecfce7",
+    "100": "#b0f199",
+    "200": "#56e123",
+    "300": "#3dbe0f",
+    "400": "#37aa0d",
+    "500": "#2e900b",
+    "600": "#277909",
+    "700": "#1f6107",
+    "800": "#1b5206",
+    "900": "#133c05",
+  },
+};
+
+const theme = extendTheme({
+  config: {
+    initialColorMode: "dark",
+  },
+  styles: {
+    global: {
+      body: {
+        fontFamily: "Madimi One",
+        fontSize: 17,
+        overflowY: "scroll",
+        fontWeight: "normal",
+        // background: "white",
+        // bgGradient: "linear(to-t, black, gray.900)",
+      },
+    },
+  },
+  colors: {
+    background: {
+      light: baseColors.gray[100],
+      dark: baseColors.gray[900],
+    },
+    text: {
+      light: baseColors.gray[900],
+      dark: baseColors.primary[300],
+    },
+    labelText: baseColors.gray[100],
+    outline: baseColors.gray[600],
+    ...baseColors,
+  },
+  components: {
+    MainWrap,
+    Header,
+    Accordion,
+    Language,
+    Button: {
+      baseStyle: {
+        fontWeight: "normal",
+      },
+    },
+  },
+});
+
+export { theme };
